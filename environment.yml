@@ -1,0 +1,29 @@
+name: rag-finanzas
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Base del sistema
+  - python=3.10
+  - pip
+  - nb_conda_kernels  # Para que Jupyter detecte este entorno automáticamente
+
+  # Dependencias instaladas vía PIP (Mejor compatibilidad para LangChain/Chroma)
+  - pip:
+      # Manejo de Datos
+      - pandas
+      - datasets
+      - scikit-learn
+      
+      # Stack RAG
+      - langchain
+      - langchain-community
+      - langchain-huggingface
+      - chromadb
+      - sentence-transformers
+      
+      # Utilidades
+      - python-dotenv
+      - ipykernel
+      - tqdm  # Barras de progreso (útil para cargas largas)
+      - pypdf # Para leer PDFs si decides usar libros
